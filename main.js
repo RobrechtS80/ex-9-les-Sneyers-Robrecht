@@ -29,10 +29,12 @@ app.get('/books',function(request,response){
 });
 app.post('/books',function(request, response){
     request.body;
-    var book=new Book(counter++,request.body.name);
+    var book=new Book(counter,request.body.name);
     books.push(book);
+    counter++;
+    response.status(201).send();
 });
 
 console.log('hello world');
 
-app.listen(4322);
+app.listen(4323);
