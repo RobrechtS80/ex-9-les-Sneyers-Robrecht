@@ -14,6 +14,17 @@ app.get('/',function(request,response){
     response.send("hello world");
     
 });
+var Book = function(id,name){
+    this.id=id;
+    this.name=name;
+    
+};
+
+app.get('/books',function(request,response){
+    var books=[new Book(1,'kanker'), new Book(2,'potter')];
+    response.send(books);
+    
+});
 
 console.log('hello world');
 
