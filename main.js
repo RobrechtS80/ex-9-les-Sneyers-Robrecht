@@ -19,6 +19,7 @@ var Book = function(id,name){
     this.name=name;
     
 };
+var counter=3;
  var books=[new Book(1,'kanker'), new Book(2,'potter')];
  
 app.get('/books',function(request,response){
@@ -27,8 +28,9 @@ app.get('/books',function(request,response){
     
 });
 app.post('/books',function(request, response){
-    
-    
+    request.body;
+    var book=new book(counter++,request.body.name);
+    books.push(book);
 });
 
 console.log('hello world');
