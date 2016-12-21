@@ -10,6 +10,11 @@ var parser = require('body-parser');
 var app = express();
 app.use(parser.json());
 
+app.get('/',function(request,response){
+    response.send("hello world");
+    
+});
+
 console.log('hello world');
 
-app.listen(4321);
+app.listen(4322);
