@@ -1,0 +1,16 @@
+{
+  "name": "LES21_12",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "Robrecht-pc",
+  "contributors": [],
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
