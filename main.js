@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+var dal = require("./storage.js");
 var express = require('express');
 var parser = require('body-parser');
 
@@ -29,12 +29,13 @@ app.get('/books',function(request,response){
 });
 app.post('/books',function(request, response){
     request.body;
-    var book=new Book(counter,request.body.name);
-    books.push(book);
-    counter++;
-    response.status(201).send();
+    var book=new Book(counter++,request.body.name);
+    dal.insertBooks(book, function(){
+       response.status(201).send();   
+    });
+  
 });
 
 console.log('hello world');
 
-app.listen(4323);
+app.listen(4324);
