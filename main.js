@@ -15,6 +15,7 @@ app.get('/',function(request,response){
     
 });
 var Book = function(id,name){
+    this._id=id;
     this.id=id;
     this.name=name;
     
@@ -23,8 +24,11 @@ var counter=3;
  var books=[new Book(1,'kanker'), new Book(2,'potter')];
  
 app.get('/books',function(request,response){
+   dal.listBooks(function(result){
+       
+        response.send(result);
+   });
    
-    response.send(books);
     
 });
 app.post('/books',function(request, response){
