@@ -19,6 +19,16 @@ var dal ={
 			result(db);
 		});
 	},
+        
+       listBooks: function(callback){
+           this.connect(null,function(db){
+               db.collection('books').find({}).toArray(function(err,result){
+                   db.close();
+                   callback(result);
+               });
+           });
+           
+       },
     
     insertBooks: function(book,callback){
         this.connect(null,function(db){
