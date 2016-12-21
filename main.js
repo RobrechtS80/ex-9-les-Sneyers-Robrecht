@@ -19,10 +19,15 @@ var Book = function(id,name){
     this.name=name;
     
 };
-
+ var books=[new Book(1,'kanker'), new Book(2,'potter')];
+ 
 app.get('/books',function(request,response){
-    var books=[new Book(1,'kanker'), new Book(2,'potter')];
+   
     response.send(books);
+    
+});
+app.post('/books',function(request, response){
+    
     
 });
 
