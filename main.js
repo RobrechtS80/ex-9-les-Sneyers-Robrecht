@@ -29,7 +29,7 @@ app.get('/books',function(request,response){
 });
 app.post('/books',function(request, response){
     request.body;
-    var book=new book(counter++,request.body.name);
+    var book=new Book(counter++,request.body.name);
     books.push(book);
 });
 
